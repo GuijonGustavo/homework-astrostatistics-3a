@@ -1,0 +1,10 @@
+from scipy.stats import rv_discrete
+import math
+import cmath
+class dis_gen(rv_discrete):
+    "Distribution"
+    def _pmf(self, k):
+        return cmath.exp(k*math.pi*1j/2)
+    _pmf = np.vectorize(_pmf)
+
+dis = dis_gen(name="dis")
